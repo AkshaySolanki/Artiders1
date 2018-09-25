@@ -10,11 +10,11 @@
                 </a>
                 <div id="logo1">
                     
-                    <a href="01-home.html"><img src="img/minilogo.png" alt=""></a>
+                    <a href="01-home.html"><img src="img/minilogo.png" alt="nano"></a>
                 </div>
                 <div id="logo">
                     
-                    <a href="{{ url('/') }}"><img src="img/logo.png" alt="">{{ config('app.name', 'Laravel') }}</a>
+                    <a href="{{ url('/') }}"><img src="img/final logo.png" alt="moto"></a>
                 </div>
             </div><!-- // col-md-2 -->
             <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs hidden-sm">
@@ -34,15 +34,23 @@
             </div><!-- // col-md-4 -->
            
             <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs hidden-sm" style="margin-left: 230px">
-                  <div class="dropdown">
+                 <!-- <div class="dropdown">
+                    <a data-toggle="dropdown" href="#" class="user-area">
+                        <div class="thumb"><img src="img/icon-account.png" alt=""></div>
+                        <p style="color: white; font-weight:500; font-size: 20px;">ACCOUNT <h3>Log In / Sign Up</h3></p>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu account-menu"> -->
+                       <!-- Authentication Links -->
+                @guest
+                <div class="dropdown">
                     <a data-toggle="dropdown" href="#" class="user-area">
                         <div class="thumb"><img src="img/icon-account.png" alt=""></div>
                         <p style="color: white; font-weight:500; font-size: 20px;">ACCOUNT <h3>Log In / Sign Up</h3></p>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu account-menu">
-                       <!-- Authentication Links -->
-                @guest
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
@@ -50,10 +58,19 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                <div class="dropdown">
+                        <a data-toggle="dropdown" href="#" class="user-area">
+                            <div class="thumb"><img src="img/icon-account.png" alt=""></div>
+                            <p style="color: white; font-weight:500; font-size: 20px;"> 
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                            </p>
+                            <i class="fa fa-angle-down"></i>
                         </a>
+                        <ul class="dropdown-menu account-menu">
+
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">My Profile
+                         </a>
                     </li>
 
                     <li class="nav-item">
